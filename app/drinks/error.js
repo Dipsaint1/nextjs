@@ -1,10 +1,9 @@
 'use client';
 
-const error = () => {
+const error = ({ error : { message }, reset }) => {
+  console.log(error)
   return (
-    <div>
-      Enter
-    </div>
+    <div>{ message }</div>
   );
 }
 
