@@ -13,10 +13,10 @@ const fetchDrinks = async () => {
 }
 
 const Drinks = async () => {
-  const data = await fetchDrinks();
+  const { drinks } = await fetchDrinks();
   return (
     <div>
-      <DrinksList drinks={data.drinks} />
+      <DrinksList drinks={ drinks } />
     </div>
   );
 }
