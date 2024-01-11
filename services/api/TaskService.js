@@ -1,6 +1,6 @@
 import prisma from '../../utils/db';
 
-export default class PrismaTestService{
+export default class TaskService{
   static createTask = async (content) => {
     await prisma.task.create({
       data: {
