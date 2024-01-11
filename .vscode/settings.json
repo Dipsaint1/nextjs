@@ -26,5 +26,6 @@
     "titleBar.border": "#20b2aa",
     "titleBar.inactiveBackground": "#20b2aa99",
     "titleBar.inactiveForeground": "#15202b99"
-  }
+  },
+  "cSpell.words": ["thecocktaildb"]
 }
