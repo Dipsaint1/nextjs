@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import TaskService from "@/services/api/TaskService";
 import DeleteForm from './DeleteForm';
+import { getAllTasks } from '@/utils/actions';
 
 const TaskList = async () => {
-  const tasks = await TaskService.getAllTasks()
+  const tasks = await getAllTasks();
   
   if (tasks.length === 0) {
     return <h2 className='mt-8 font-medium text-lg'>No tasks to show...</h2>;
