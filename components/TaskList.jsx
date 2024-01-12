@@ -13,24 +13,10 @@ const TaskList = async () => {
     <ul className='mt-8'>
       {tasks.map(({ id, completed, content }) => {
         return (
-          <li
-            key={id}
-            className='flex justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lg shadow-lg'
-          >
-            <h2
-              className={`text-lg capitalize ${
-                completed ? 'line-through' : null
-              }`}
-            >
-              {content}
-            </h2>
+          <li key={id} className='flex justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lg shadow-lg'>
+            <h2 className={`text-lg capitalize ${ completed ? 'line-through' : null }`}> {content} </h2>
             <div className='flex gap-6 items-center'>
-              <Link
-                href={`/tasks/${id}`}
-                className='btn btn-accent btn-xs'
-              >
-                edit
-              </Link>
+              <Link href={`/tasks/${id}`} className='btn btn-accent btn-xs' > edit </Link>
               <DeleteForm id={id} />
             </div>
           </li>
