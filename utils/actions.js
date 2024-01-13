@@ -2,7 +2,6 @@
 import { redirect } from 'next/navigation';
 import prisma from '../utils/db';
 import { revalidatePath } from "next/cache";
-import { resolve } from 'styled-jsx/css';
 
 export const getAllTasks = async () => {
   return await prisma.task.findMany({
@@ -20,15 +19,20 @@ export const createTask = async (formData) => {
   revalidatePath('/tasks');
 }
 
-export const createTaskCustom = async (formData) => {
-  // Set a delay
-  await new Promise(resolve => setTimeout(resolve, 3000));
-  
+export const createTaskCustom = async (prevState, formData) => {
+  // await new Promise(resolve => setTimeout(resolve, 3000));
   const content = formData.get('content');
-  await prisma.task.create({
-    data: { content },
-  });
-  revalidatePath('/tasks');
+  try {
+    await prisma.task.create({
+      data: { content },
+    });
+    revalidatePath('/tasks');
+    return { message: 'Success !!!'}
+  } catch (error) {
+    return { message: 'error...'}
+  }
+
+  
 }
 
 export const deleteTask = async (formData) => {

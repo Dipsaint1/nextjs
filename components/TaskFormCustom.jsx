@@ -1,5 +1,5 @@
 "use client"
-import { useFormStatus } from "react-dom";
+import { useFormStatus, useFormState } from "react-dom";
 import { createTaskCustom } from "@/utils/actions";
 
 const SubmitBtn = () => {
@@ -12,9 +12,14 @@ const SubmitBtn = () => {
   );
 }
 
+const initialState = { message: null };
+
 const TaskFormCustom = () => {
+  const [formState, formAction] = useFormState(createTaskCustom, initialState);
+
   return (
-    <form action={createTaskCustom}>
+    <form action={formAction}>
+      { formState?.message ? <p className="mb-2">{formState?.message}</p> : null }
       <div className='join w-full'>
         <input type='text' className='input input-bordered join-item w-full' placeholder='type here' name='content' required/>
         <SubmitBtn/>
