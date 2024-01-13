@@ -14,6 +14,7 @@ const SubmitBtn = () => {
 
 const initialState = { message: null };
 
+// Error checking in forms
 const TaskFormCustom = () => {
   const [formState, formAction] = useFormState(createTaskCustom, initialState);
 
