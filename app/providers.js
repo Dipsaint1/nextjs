@@ -1,10 +1,12 @@
 'use client';
+import { Toaster } from 'react-hot-toast';
 
 const Providers = ({ children }) => {
   return (
-    <div>
-      Enter
-    </div>
+    <>
+      <Toaster />
+      { children }
+    </>
   );
 }
 
