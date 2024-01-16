@@ -16,7 +16,7 @@ const initialState = { message: null };
 
 // Error checking in forms
 const TaskFormCustom = () => {
-  const [formState, formAction] = useFormState(createTaskCustom, initialState);
+  const [ formState, formAction ] = useFormState(createTaskCustom, initialState);
 
   return (
     <form action={formAction}>
