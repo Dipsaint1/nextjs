@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className='px-8 py-20 max-w-6xl mx-auto bg-white'>
           <Providers> { children } </Providers>  
-        </main>
+        </main> 
       </body>
     </html>
   )
