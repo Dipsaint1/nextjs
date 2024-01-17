@@ -6,7 +6,7 @@ import { deleteTask } from "@/utils/actions";
 const SubmitButton = () => {
   const { pending } = useFormStatus();
   return (
-    <button className='btn btn-xs btn-error' disabled={pending}>
+    <button className='btn btn-xs btn-error' disabled={ pending }>
       { pending ? 'pending...' : 'delete' }
     </button>
   );
