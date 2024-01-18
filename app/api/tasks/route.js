@@ -5,3 +5,13 @@ export const GET = async (request) => {
   return Response.json({ data: tasks })
 }
 
+export const POST = async (request) => {
+  const data = await request.json();
+  const tasks = await db.task.create({ 
+    data: {
+      content: data.content,
+    } 
+  });
+  return Response.json({ data: tasks })
+}
+
