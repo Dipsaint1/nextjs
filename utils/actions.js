@@ -37,8 +37,6 @@ export const createTaskCustom = async (prevState, formData) => {
   } catch (error) {
     return { message: 'error'}
   }
-
-  
 }
 
 export const deleteTask = async (formData) => {
